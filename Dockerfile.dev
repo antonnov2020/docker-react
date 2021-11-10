@@ -1,0 +1,14 @@
+# Specify a base image
+FROM node:16
+
+
+
+#Install some dependencies
+
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+
+# Set up a default command
+CMD ["npm","run","start"]
